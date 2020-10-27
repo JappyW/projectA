@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import { ALLOW_WINDOW_EXTENDS, ALLOW_REDUX_DEVTOOLS_EXTENSION } from 'constants/env';
 import { history } from 'routes/history';
 import { createRootReducer } from './root-reducer';
-import { rootSaga } from './root-saga';
+import rootSaga from './root-saga';
 
 const sagaMiddleware = createSagaMiddleware();
 const reduxMiddleware = applyMiddleware(

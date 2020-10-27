@@ -1,35 +1,25 @@
-import './style.scss';
-import React from 'react';
-import { Button, Col, Row } from 'antd';
-import { LoginOutlined } from '@ant-design/icons';
-import { Logo } from '../logo';
-import { NavBar } from '../navbar';
+import "./style.scss";
+import React from "react";
+import { Logo } from "../logo";
+import { NavBar } from "../navbar";
+import { Grid, Paper } from "@material-ui/core";
 
 const View = () => {
 	return (
-		<div className={'header'}>
-			<Row type={'flex'} gutter={36} align={'middle'}>
-				<Col>
+		<Paper style={{margin: 0, padding: 0}}>
+			<div className={"header"}>
+				<Grid container align="center" justify="space-between">
 					<Logo />
-				</Col>
-				<Col className={'_flex-grow'}>
-					<Row type={'flex'} gutter={16} align={'middle'}>
-						<Col className={'_flex-grow'}>
-							<NavBar />
-						</Col>
-						<Col>
-							<Button
-								type={'link'}
-								htmlType={'button'}
-								icon={<LoginOutlined />}
-							>
-								Sign In
-							</Button>
-						</Col>
-					</Row>
-				</Col>
-			</Row>
-		</div>
+					<Grid className={"_flex-grow"}>
+						<Grid container align="center">
+							<Grid className={"_flex-grow"}>
+								<NavBar />
+							</Grid>
+						</Grid>
+					</Grid>
+				</Grid>
+			</div>
+		</Paper>
 	);
 };
 

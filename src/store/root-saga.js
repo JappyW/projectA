@@ -1,6 +1,9 @@
-import { all } from 'redux-saga/effects';
-import * as sagas from './export-sagas';
+import { all, fork } from "redux-saga/effects";
+import { watcherGetContactsCollection, watcherSetFiltersWatcher } from "./contacts/sagas";
 
-export function* rootSaga() {
-	yield all(Object.values(sagas).map((saga) => saga()))
+export default function* rootSaga() {
+  yield all([
+    fork(watcherGetContactsCollection),
+    fork(watcherSetFiltersWatcher)
+  ]);
 }

@@ -1,9 +1,8 @@
-import './style.scss';
-import React, { useMemo } from 'react';
-import { Layout } from 'antd';
-import { APP_NAME } from 'constants/env';
-import { Header } from 'components';
-import { style } from './style';
+import "./style.scss";
+import React, { useMemo } from "react";
+import { APP_NAME } from "constants/env";
+import { Header } from "components";
+import { Grid } from "@material-ui/core";
 
 const View = React.memo((props) => {
 	const { children } = props;
@@ -11,11 +10,23 @@ const View = React.memo((props) => {
 	const currentYear = useMemo(() => new Date().getFullYear(), []);
 
 	return (
-		<Layout className={'layout layout--base'}>
-			<Layout.Header className={'layout__header'}><Header/></Layout.Header>
-			<Layout.Content className={'layout__content'} style={style.content}>{children}</Layout.Content>
-			<Layout.Footer className={'layout__footer'}>{currentYear} &copy; {APP_NAME}</Layout.Footer>
-		</Layout>
+		<div>
+			<Header />
+			<Grid
+				container
+				direction="column"
+				justify="space-between"
+				alignItems="center"
+				className="base-grid"
+			>
+				<Grid item style={{ width: "100%" }}>
+					{children}
+				</Grid>
+				<Grid item>
+					{currentYear} &copy; {APP_NAME}
+				</Grid>
+			</Grid>
+		</div>
 	);
 });
 

@@ -4,5 +4,10 @@ const _getContactsState = (state) => state.contacts;
 
 export const _getContactsCollection = createSelector(
 	[_getContactsState],
-	(collection) => collection,
+	(contacts) => contacts.collection,
+);
+
+export const _getContactsFilters = createSelector(
+	[_getContactsState],
+	(contacts) => contacts.filters,
 );

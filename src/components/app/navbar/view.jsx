@@ -2,10 +2,12 @@ import './style.scss';
 import React, { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { routes } from 'routes';
+import './style.scss';
 
 const View = () => {
 	const navbarRoutes = useMemo(() => [
 		{ name: 'Home', key: 'home' },
+		{ name: 'Contacts', key: 'contacts' },
 	], []);
 
 	return (
