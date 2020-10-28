@@ -3,8 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core';
 export const useTableFilterStyles = makeStyles(() =>
 	createStyles({
 		paper: {
-			padding: '20px',
-			marginBottom: '20px',
+			padding: '2rem',
 		},
 		title: {
 			fontWeight: 'normal',

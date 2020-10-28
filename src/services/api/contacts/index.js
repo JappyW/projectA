@@ -2,7 +2,6 @@ import axios from "axios";
 export const CONTACTS = "http://localhost:8000/api/contacts";
 
 export const getContactsCollection = async (filters) => {
-	console.log(filters)
 	return await axios
 		.get(`${CONTACTS}`, {params: filters})
 		.then((response) => {

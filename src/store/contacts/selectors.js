@@ -11,3 +11,8 @@ export const _getContactsFilters = createSelector(
 	[_getContactsState],
 	(contacts) => contacts.filters,
 );
+
+export const _getContactsErros = createSelector(
+	[_getContactsState],
+	(contacts) => contacts.error,
+);

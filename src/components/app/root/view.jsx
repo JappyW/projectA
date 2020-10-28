@@ -1,17 +1,16 @@
-import React from 'react';
-import { RoutesSwitch } from 'routes';
-import { ThemeProvider } from '@material-ui/core';
-import { theme } from 'materialTheme';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
+import React from "react";
+import { RoutesSwitch } from "routes";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+import { ToastProvider } from "react-toast-notifications";
 
 const View = React.memo(() => {
 	return (
-		<ThemeProvider theme={theme}>
-			<MuiPickersUtilsProvider utils={DateFnsUtils}>
-				<RoutesSwitch />
-			</MuiPickersUtilsProvider>
-		</ThemeProvider>
+		<MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <ToastProvider placement="bottom-right">
+			<RoutesSwitch />
+        </ToastProvider>
+		</MuiPickersUtilsProvider>
 	);
 });
 

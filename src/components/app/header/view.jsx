@@ -6,7 +6,7 @@ import { Grid, Paper } from "@material-ui/core";
 
 const View = () => {
 	return (
-		<Paper style={{margin: 0, padding: 0}}>
+		<Paper style={{ margin: 0, padding: "1rem" }}>
 			<div className={"header"}>
 				<Grid container align="center" justify="space-between">
 					<Logo />

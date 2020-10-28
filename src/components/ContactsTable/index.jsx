@@ -8,7 +8,6 @@ import {
 	TableRow,
 } from "@material-ui/core";
 import ContactsTableHead from "./ContactsTableHead";
-import TablesPagination from "components/TablesPagination";
 import { useTableStyles } from "components/app/styles";
 
 const ContactsTable = (props) => {
@@ -21,23 +20,9 @@ const ContactsTable = (props) => {
 
 	// ----------------------------------------------------
 	const { meta, data = [] } = contactsCollection;
-	const { current_page = 0, total = 0, per_page = 10 } = meta || {};
+	const { per_page = 10 } = meta || {};
 
 	// ----------------------------------------------------
-	const handleChangePage = (pageNumber) => {
-		setContactsFilters({
-			page: pageNumber,
-			per_page,
-		});
-	};
-
-	const handleChangeRowsPerPage = (event) => {
-		const { value } = event.target;
-		setContactsFilters({
-			page: Math.floor(total / value),
-			per_page: value,
-		});
-	};
 
 	const handleRequestSort = (event, property) => {
 		const isAsc = orderBy === property && order === "asc";
@@ -89,7 +74,7 @@ const ContactsTable = (props) => {
 
 	return (
 		<Paper className={classes.paper}>
-			<TableContainer>
+			<TableContainer className={classes.tableContainer}>
 				<Table size="medium" stickyHeader aria-label="sticky table">
 					<ContactsTableHead
 						order={order}
@@ -131,14 +116,6 @@ const ContactsTable = (props) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
-
-			<TablesPagination
-				tableCurrentPage={current_page}
-				tablePerPage={per_page}
-				totalPage={total}
-				changePage={handleChangePage}
-				changeRowsPerPage={handleChangeRowsPerPage}
-			/>
 		</Paper>
 	);
 };

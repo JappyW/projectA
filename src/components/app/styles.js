@@ -7,8 +7,11 @@ export const useTableStyles = makeStyles((theme) =>
 		},
 		paper: {
 			width: '100%',
-			marginTop: theme.spacing.unit * 3,
-			overflowX: 'auto',
+			marginTop: '3rem',
+			overflowX: 'auto'
+		},
+		tableContainer: {
+			overflow: 'unset'
 		},
 		visuallyHidden: {
 			border: 0,

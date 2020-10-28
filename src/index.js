@@ -5,6 +5,7 @@ import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-rout
 import { Root } from 'components';
 import { history } from 'routes/history';
 import { store } from 'store';
+import './styles.scss';
 
 const root = document.getElementById('root');
 const render = (Component, root, done = () => {}) => {

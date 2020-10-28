@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Paper, Grid, FormControl, TextField, Button } from "@material-ui/core";
+import ClearIcon from "@material-ui/icons/Clear";
 import { useTableFilterStyles } from "../styles";
-
 import "./styles.scss";
 
 const ContactsFilters = (props) => {
@@ -10,16 +10,16 @@ const ContactsFilters = (props) => {
 
 	const classes = useTableFilterStyles();
 
-	const [fullname, setFullname] = useState("");
-	const [gender, setGender] = useState("");
-	const [nationality, setNationality] = useState("");
-	const [contactCreator, setContactCreator] = useState("");
+	const [fullname, setFullname] = useState(null);
+	const [gender, setGender] = useState(null);
+	const [nationality, setNationality] = useState(null);
+	const [contactCreator, setContactCreator] = useState(null);
 
 	const handleClear = () => {
-		setFullname("");
-		setGender("");
-		setNationality("");
-		setContactCreator("");
+		setFullname(null);
+		setGender(null);
+		setNationality(null);
+		setContactCreator(null);
 		setContactsFilters({
 			fullname: null,
 			gender: null,
@@ -38,6 +38,15 @@ const ContactsFilters = (props) => {
 		});
 	};
 
+	useEffect(() => {
+		setContactsFilters({
+			fullname,
+			gender,
+			nationality,
+			contact_creator: contactCreator,
+		});
+	}, [fullname, gender, nationality, contactCreator])
+
 	return (
 		<div>
 			<Paper className={classes.paper}>
@@ -54,7 +63,7 @@ const ContactsFilters = (props) => {
 						<Grid item xs={12} sm={6} md={6} lg={3}>
 							<FormControl className={classes.formControl}>
 								<TextField
-									value={fullname}
+									value={fullname || ""}
 									label={"Fullname"}
 									name="fullname"
 									placeholder={"Fullname"}
@@ -68,7 +77,7 @@ const ContactsFilters = (props) => {
 						<Grid item xs={12} sm={6} md={6} lg={3}>
 							<FormControl className={classes.formControl}>
 								<TextField
-									value={gender}
+									value={gender || ""}
 									label={"Gender"}
 									name="gender"
 									placeholder={"Gender"}
@@ -80,7 +89,7 @@ const ContactsFilters = (props) => {
 						<Grid item xs={12} sm={6} md={6} lg={3}>
 							<FormControl className={classes.formControl}>
 								<TextField
-									value={nationality}
+									value={nationality || ""}
 									label={"Nationality"}
 									name="nationality"
 									placeholder={"Nationality"}
@@ -94,7 +103,7 @@ const ContactsFilters = (props) => {
 						<Grid item xs={12} sm={6} md={6} lg={3}>
 							<FormControl className={classes.formControl}>
 								<TextField
-									value={contactCreator}
+									value={contactCreator || ""}
 									label={"Contact creator"}
 									name="contactCreator"
 									placeholder={"Contact creator"}
@@ -114,20 +123,17 @@ const ContactsFilters = (props) => {
 							justify="flex-end"
 						>
 							<Button
-								className={classes.buttonClear}
-								variant="contained"
+								variant="outlined"
 								color="default"
 								onClick={handleClear}
 							>
-								{"Clear"}
+								<ClearIcon />
+								{<span className='clear-button-text'>Clear</span>}
 							</Button>
 						</Grid>
 					</Grid>
 				</form>
 			</Paper>
-			<Grid container>
-				<Button type='submit' onClick={handleSubmit}>Fetch</Button>
-			</Grid>
 		</div>
 	);
 };

@@ -22,7 +22,7 @@ const View = React.memo((props) => {
 				<Grid item style={{ width: "100%" }}>
 					{children}
 				</Grid>
-				<Grid item>
+				<Grid item style={{padding: '1rem'}}>
 					{currentYear} &copy; {APP_NAME}
 				</Grid>
 			</Grid>

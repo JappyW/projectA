@@ -1,0 +1,66 @@
+.card-item {
+    max-width: 30vw;
+    min-height: 50vw;
+    height: 100%;
+}
+
+@media (max-width: 468px) {
+    .card-item {
+        max-width: 100%;
+        min-height: 50vw;
+        height: 100%;
+    }
+}
+
+.card-item > * {
+    color: #2a4f6d;
+}
+
+.media {
+    height: 140;
+}
+.card-header{
+    font-size: 1.5vw;
+}
+
+.card-phone{
+    font-size: 1.5vw;
+    margin-bottom: 10px;
+}
+
+.card-address {
+    font-size: 1.5vw;
+    margin-left: 3vw;
+    margin-bottom: 10px;
+    color: #2f3031;
+}
+
+.card-country {
+    font-size: 1.7vw;
+    margin: 2px;
+}
+
+.card-item .divider {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.card-email{
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: #2a4f6d;
+    margin-bottom: 10px;
+}
+
+.card-item .icon {
+    margin-right: 8px;
+    height: 2vw;
+}
+
+
+.years-old-text {
+    line-height: 1.8vw;
+    margin-left: 10px;
+    font-size: 1.2vw;
+    color: #888080;
+}

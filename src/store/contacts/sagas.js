@@ -6,7 +6,6 @@ import { _getContactsFilters } from "./selectors";
 function* workerGetContactsCollection() {
 	try {
 	const filters = yield select(_getContactsFilters);
-	console.log(filters)
     const response = yield call(getContactsCollection, filters);
 		if (response.status === "success") {
 			yield put(saveContacts(response.data));
