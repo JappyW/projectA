@@ -4,13 +4,13 @@
   "description": "",
   "main": "api/index.js",
   "scripts": {
-      "dev": "babel-watch /api/index.js",
-      "clean": "rm -rf build && mkdir build",
-      "build-babel": "babel -d ./build ./src -s",
-      "build": "npm run clean && npm run build-babel",
-      "start": "npm run build && node ./build/index.js",
-      "heroku-postbuild": "npm install"
-    },
+    "dev": "babel-watch /api/index.js",
+    "clean": "mkdir build",
+    "build-babel": "babel -d ./build ./api -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js",
+    "heroku-postbuild": "npm install"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -52,6 +52,7 @@
     "@babel/register": "^7.10.1",
     "@babel/runtime": "^7.10.2",
     "babel-loader": "^8.1.0",
+    "babel-watch": "^7.0.0",
     "js-levenshtein": "^1.1.6",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.2.0",
