@@ -14,28 +14,10 @@ const db = {};
 
 let sequelize;
 if (config.environment === 'production') {
-    sequelize = new Sequelize(
-        process.env.DB_NAME,
-        process.env.DB_USER,
-        process.env.DB_PASS, {
-            host: process.env.DB_HOST,
-            port: process.env.DB_PORT,
-            dialect: 'postgres',
-            define: {
-                timestamps: false
-
-            },
-            dialectOption: {
-                ssl: true,
-                native: true
-            },
-            logging: false
-        }
-    );
+    sequelize = new Sequelize('postgres://fyrguyel:xc0I94ZmdiN_jGvdzsITMoR7rE6WJob9@rogue.db.elephantsql.com:5432/fyrguyel', {ssl:true})
 } else {
-    sequelize = new Sequelize(
-        config.database, config.username, config.password, config
-    );
+    sequelize = new Sequelize('postgres://fyrguyel:xc0I94ZmdiN_jGvdzsITMoR7rE6WJob9@rogue.db.elephantsql.com:5432/fyrguyel', {ssl:true})
+
 }
 
 fs

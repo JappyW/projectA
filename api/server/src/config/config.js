@@ -9,9 +9,9 @@ module.exports = {
   development: {
     // DB NAME HERE
     database: "contacts",
-    username: "postgres",
-    password: "root",
-    host: "127.0.0.1",
+    username: "fyrguyel",
+    password: "xc0I94ZmdiN_jGvdzsITMoR7rE6WJob9",
+    host: "rogue.db.elephantsql.com",
     port: 5432,
     dialect: "postgres",
     define: {
