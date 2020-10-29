@@ -55,6 +55,7 @@ class ContactsService {
 					],
 				},
 			});
+
 			return {
 				data: contacts.rows.splice((page - 1) * per_page, per_page),
 				meta: {
