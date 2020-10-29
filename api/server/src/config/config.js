@@ -8,7 +8,7 @@ module.exports = {
 
   development: {
     // DB NAME HERE
-    database: "contacts",
+    database: "fyrguyel",
     username: "fyrguyel",
     password: "xc0I94ZmdiN_jGvdzsITMoR7rE6WJob9",
     host: "rogue.db.elephantsql.com",
@@ -36,8 +36,8 @@ module.exports = {
   },
 
   test: {
-    database: "contacts",
-    username: "postgres",
+    database: "fyrguyel",
+    username: "fyrguyel",
     password: "root",
     host: "127.0.0.1",
     port: 5432,
@@ -68,7 +68,7 @@ module.exports = {
   },
 
   production: {
-    database: process.env.DB_NAME,
+    database: 'fyrguyel',
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     host: process.env.DB_HOST,

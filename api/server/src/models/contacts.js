@@ -1,5 +1,3 @@
-import {HOTEL_STATUS} from '../../constants/EnumForHotelStatus';
-
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define(
     "contacts",
