@@ -1,5 +1,4 @@
 import ContactsService from "../services/ContactsService";
-import UserService from "../services/UserService";
 import {
   validateResponse,
   util,
