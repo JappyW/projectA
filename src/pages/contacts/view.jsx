@@ -44,7 +44,7 @@ const View = (props) => {
 	};
 
 	useEffect(() => {
-		if(error) {
+		if (error) {
 			addToast(error, {
 				appearance: "error",
 			});
@@ -178,6 +178,15 @@ const View = (props) => {
 								</Grid>
 							)}
 						</Grid>
+						{contacts.data?.length ? null : (
+							<Typography
+								variant="h3"
+								component="h2"
+								style={{ color: "#20346b" }}
+							>
+								No contacts found
+							</Typography>
+						)}
 						{contacts.meta && contacts.stats && (
 							<Grid
 								container
