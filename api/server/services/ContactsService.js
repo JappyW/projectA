@@ -15,23 +15,7 @@ class ContactsService {
 				gender = null,
 				nationality = null,
 			} = req.query;
-			const count = await database.contacts.findAndCountAll({
-				where: {
-					fullname: fullname
-						? { [Op.like]: `%${fullname}%` }
-						: { [Op.ne]: null },
-					gender: gender
-						? { [Op.like]: `${gender}%` }
-						: { [Op.ne]: null },
-					contact_creator: contact_creator
-						? { [Op.like]: `%${contact_creator}%` }
-						: { [Op.ne]: null },
-					nationality: nationality
-						? { [Op.like]: `%${nationality}%` }
-						: { [Op.ne]: null },
-				},
-			});
-			const contacts = await database.contacts.findAll({
+			const contacts = await database.contacts.findAndCountAll({
 				where: {
 					fullname: fullname
 						? { [Op.like]: `%${fullname}%` }
@@ -72,9 +56,9 @@ class ContactsService {
 				},
 			});
 			return {
-				data: contacts.splice((page - 1) * per_page, per_page),
+				data: contacts.rows.splice((page - 1) * per_page, per_page),
 				meta: {
-					total: count.count,
+					total: contacts.count,
 					per_page: per_page,
 					page: page,
 				},
