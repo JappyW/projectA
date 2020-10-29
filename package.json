@@ -2,12 +2,15 @@
   "name": "sequlizeServer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "build": "babel ./api/index.js --out-file index-compiled.js",
-    "dev": "nodemon --exec babel-node ./api/index.js",
-    "start": "nodemon --exec babel-node ./api/index.js"
-  },
+      "dev": "babel-watch /api/index.js",
+      "clean": "rm -rf build && mkdir build",
+      "build-babel": "babel -d ./build ./src -s",
+      "build": "npm run clean && npm run build-babel",
+      "start": "npm run build && node ./build/index.js",
+      "heroku-postbuild": "npm install"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
