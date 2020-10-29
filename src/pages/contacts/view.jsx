@@ -23,6 +23,7 @@ const View = (props) => {
 	const [genderPrevail, setGenderPrevail] = React.useState();
 	const [genderPrevailString, setGenderPrevailString] = React.useState();
 	const { addToast } = useToasts();
+	console.log(genderPrevailString);
 
 	const classes = useTableStyles();
 
@@ -53,20 +54,30 @@ const View = (props) => {
 
 	useEffect(() => {
 		if (contacts.stats) {
-			setGenderPrevail(
-				Math.max(
-					contacts.stats.woman,
-					contacts.stats.man,
-					contacts.stats.otherGenders
-				)
+			const prevail = Math.max(
+				contacts.stats.woman,
+				contacts.stats.man,
+				contacts.stats.otherGenders
 			);
-			setGenderPrevailString(
-				genderPrevail === contacts.stats.woman
-					? "Woman"
-					: genderPrevail === contacts.stats.man
-					? "Man"
-					: "Other genders"
-			);
+			setGenderPrevail(genderPrevail);
+			let pre;
+			console.log(prevail, {
+				woman: contacts.stats.woman,
+				man: contacts.stats.man,
+				ot: contacts.stats.otherGenders,
+			});
+			console.log(prevail == contacts.stats.woman);
+			switch (prevail) {
+				case contacts.stats.man: {
+					return setGenderPrevailString("Man");
+				}
+				case contacts.stats.woman: {
+					return setGenderPrevailString("Woman");
+				}
+				case contacts.stats.otherGenders: {
+					return setGenderPrevailString("Other genders");
+				}
+			}
 		}
 	}, [contacts]);
 
