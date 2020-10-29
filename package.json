@@ -4,12 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": " babel-node ",
-    "devstart": "babel-node ./api/index.js",
-    "start": "npm run build && node ./build/index.js",
-    "build": "npm run clean && npm run babel-build",
-    "babel-build": "babel -d ./build ./api -s",
-    "clean": "rm -rf ./build && mkdir build",
+    "build": "babel index.js --out-file index-compiled.js",
+    "dev": "nodemon --exec babel-node index.js"
   },
   "keywords": [],
   "author": "",
