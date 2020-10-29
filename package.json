@@ -10,7 +10,7 @@
     "build": "npm run clean && npm run babel-build",
     "babel-build": "babel -d ./build ./api -s",
     "clean": "rm -rf ./build && mkdir build",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
