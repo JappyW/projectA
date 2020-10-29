@@ -2,9 +2,9 @@ import config from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
 import rootRoutes from "./server/routes/RootRoutes";
-import { SERVER_PORT_DEFAULT } from "./server/constants/server.env.json";
-import { CLIENT_DOMAIN_DEFAULT } from "./server/constants/server.env.json";
-import STATUS from "./server/constants/status.code.env.json";
+import { SERVER_PORT_DEFAULT } from "./server/constants/server.env";
+import { CLIENT_DOMAIN_DEFAULT } from "./server/constants/server.env";
+import STATUS from "./server/constants/status.code.env";
 
 config.config();
 
