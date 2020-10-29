@@ -14,7 +14,11 @@ const port = process.env.PORT || SERVER_PORT_DEFAULT;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ credentials: true, origin: CLIENT_DOMAIN_DEFAULT }));
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 app.use(rootRoutes);
 
 // when a random route is inputed

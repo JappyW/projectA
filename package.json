@@ -2,9 +2,9 @@
   "name": "sequlizeServer",
   "version": "1.0.0",
   "description": "",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "babel-watch /api/index.js",
+    "dev": "babel-watch api/index.js",
     "clean": "mkdir build",
     "build-babel": "babel -d ./build ./api -s",
     "build": "npm run clean && npm run build-babel",
@@ -59,6 +59,7 @@
     "eslint-plugin-import": "^2.21.2",
     "multer": "^1.4.2",
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "express": "^4.17.1"
   }
 }
