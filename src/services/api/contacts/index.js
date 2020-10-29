@@ -1,5 +1,5 @@
 import axios from "axios";
-export const CONTACTS = "http://localhost:8000/api/contacts";
+export const CONTACTS = "https://projectaback.herokuapp.com/contacts";
 
 export const getContactsCollection = async (filters) => {
 	return await axios
@@ -14,7 +14,7 @@ export const getContactsCollection = async (filters) => {
 
 export const createContact = async (data) => {
 	return await axios
-		.post("localhost:8000/contacts", data)
+		.post("https://projectaback.herokuapp.com/contacts", data)
 		.then((response) => {
 			return response.data;
 		})
