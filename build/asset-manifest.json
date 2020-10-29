@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.907dfb17.chunk.css",
+    "main.js": "/static/js/main.d9a778d6.chunk.js",
+    "main.js.map": "/static/js/main.d9a778d6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.051cbb2f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.051cbb2f.js.map",
+    "static/js/2.34a6d07a.chunk.js": "/static/js/2.34a6d07a.chunk.js",
+    "static/js/2.34a6d07a.chunk.js.map": "/static/js/2.34a6d07a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.032470a1e662e4ca6631dac1393a55d5.js": "/precache-manifest.032470a1e662e4ca6631dac1393a55d5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.907dfb17.chunk.css.map": "/static/css/main.907dfb17.chunk.css.map",
+    "static/js/2.34a6d07a.chunk.js.LICENSE.txt": "/static/js/2.34a6d07a.chunk.js.LICENSE.txt",
+    "static/media/react-logo.svg": "/static/media/react-logo.ee7cd8ed.svg",
+    "static/media/wezom-logo.svg": "/static/media/wezom-logo.324b96ae.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.051cbb2f.js",
+    "static/js/2.34a6d07a.chunk.js",
+    "static/css/main.907dfb17.chunk.css",
+    "static/js/main.d9a778d6.chunk.js"
+  ]
+}
